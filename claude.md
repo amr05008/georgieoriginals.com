@@ -460,6 +460,189 @@ git push -u origin main
 
 ---
 
+## 🎯 NEXT SESSION CHECKLIST
+
+### 🔴 CRITICAL (Must Complete Before Deployment)
+
+**Image Optimization** ⚠️ URGENT - Some files are 4MB+
+- [ ] Compress all painting images (target: <500KB each)
+  - Priority: `14_falltears_front.jpeg` (4.2MB → too large!)
+  - Priority: `6_windy.jpeg` (1.9MB)
+  - Priority: `5_energy_front.jpeg` (1.8MB)
+  - Recommend: Use ImageOptim, TinyPNG, or Squoosh.app
+- [ ] Create optimized thumbnails for gallery grid (400-600px wide)
+- [ ] Update `paintings.json` with separate thumbnail paths
+
+**Missing Assets**
+- [ ] Create/add `favicon.png` to `public/images/`
+- [ ] Create/add `og-image.jpg` for social media sharing (1200x630px)
+- [ ] Update `index.html` with correct favicon path
+
+**Git Authentication**
+- [ ] Set up GitHub authentication (SSH key or Personal Access Token)
+- [ ] Test `git push` to verify connection
+- [ ] Confirm all changes are pushed to remote
+
+---
+
+### 🟡 HIGH PRIORITY (Pre-Launch Polish)
+
+**Testing & Quality Assurance**
+- [ ] Cross-browser testing
+  - [ ] Chrome (desktop & mobile)
+  - [ ] Safari (desktop & mobile)
+  - [ ] Firefox
+  - [ ] Edge
+- [ ] Mobile device testing on actual devices
+  - [ ] iOS Safari - test lightbox swipe gestures
+  - [ ] Android Chrome - test touch interactions
+- [ ] Test all 16 paintings load correctly
+- [ ] Test lightbox navigation (arrows, keyboard, swipe)
+- [ ] Verify email link works (`mailto:aaron@aaronroy.com`)
+
+**Accessibility Audit**
+- [ ] Run Lighthouse audit in Chrome DevTools
+- [ ] Run axe DevTools extension
+- [ ] Test keyboard-only navigation
+- [ ] Test with VoiceOver (Mac) or NVDA (Windows)
+- [ ] Verify all images have meaningful alt text
+- [ ] Check color contrast ratios (should pass WCAG AA)
+
+**SEO Optimization**
+- [ ] Verify meta descriptions are compelling
+- [ ] Add structured data (Schema.org `ArtGallery` markup)
+- [ ] Create `robots.txt` file
+- [ ] Create `sitemap.xml` (optional for single page, but good practice)
+- [ ] Test Open Graph tags with [OpenGraph.xyz](https://www.opengraph.xyz/)
+- [ ] Add canonical URL meta tag
+
+---
+
+### 🟢 MEDIUM PRIORITY (Production Launch)
+
+**Deployment**
+- [ ] Deploy to Vercel
+  - [ ] Connect GitHub repository to Vercel
+  - [ ] Verify automatic deployment works
+  - [ ] Test deployed site thoroughly
+- [ ] Configure custom domain (georgieoriginals.com)
+  - [ ] Update DNS records
+  - [ ] Enable HTTPS (auto via Vercel)
+  - [ ] Test domain propagation
+- [ ] **Cancel Squarespace subscription** ⚠️
+  - [ ] Confirm new site is fully functional on custom domain
+  - [ ] Download any remaining assets from Squarespace
+  - [ ] Cancel subscription (do this LAST!)
+
+**Analytics & Monitoring**
+- [ ] Add Google Analytics or Plausible Analytics
+- [ ] Set up conversion tracking for email clicks
+- [ ] Configure Vercel Analytics (optional, has free tier)
+- [ ] Test analytics tracking works
+
+**Performance Testing**
+- [ ] Run Lighthouse performance audit
+- [ ] Test PageSpeed Insights scores
+- [ ] Verify lazy loading works correctly
+- [ ] Check Time to First Byte (TTFB)
+- [ ] Verify cache headers working on Vercel
+
+---
+
+### 🔵 NICE TO HAVE (Future Enhancements)
+
+**Content Enhancements**
+- [ ] Add artist statement to About section
+- [ ] Consider adding process photos or studio shots
+- [ ] Add testimonials section (if available)
+- [ ] Create "Available" vs "Sold" filter for gallery
+- [ ] Add painting dimensions to gallery cards (currently only in lightbox)
+
+**Feature Additions**
+- [ ] Add image zoom in lightbox (pinch-to-zoom on mobile)
+- [ ] Add "Share" button for individual paintings
+- [ ] Consider adding Instagram feed integration
+- [ ] Add "Back to Top" button for long scroll
+- [ ] Consider adding subtle fade-in animations for gallery items on scroll
+
+**Technical Improvements**
+- [ ] Convert images to WebP format with JPEG fallback
+- [ ] Add service worker for offline capability
+- [ ] Implement critical CSS inlining
+- [ ] Add preload hints for above-fold images
+- [ ] Consider using `srcset` for responsive images
+
+**Documentation**
+- [ ] Create content management guide for non-technical users
+- [ ] Document how to add new paintings
+- [ ] Create video tutorial for updating content
+- [ ] Document backup procedures
+
+---
+
+### 📊 CURRENT STATUS REVIEW
+
+**✅ COMPLETED:**
+- Project structure and modular code architecture
+- Minimalist design matching georgieoriginals.com aesthetic
+- 16 paintings with complete metadata
+- Responsive gallery with lightbox
+- Keyboard and touch navigation
+- Accessibility features (ARIA, focus management)
+- Artist bio and photo
+- Local development server
+- Comprehensive documentation
+
+**⚠️ NEEDS ATTENTION:**
+- 5 images over 1MB (total gallery: ~17.7MB unoptimized)
+- Missing favicon and OG image
+- No Git remote authentication configured
+- Not yet deployed to production
+- No analytics or monitoring set up
+
+**📈 ESTIMATED TIME:**
+- Critical tasks: 2-3 hours
+- High priority: 3-4 hours
+- Medium priority: 2-3 hours
+- Nice to have: 5-8 hours
+
+**🎯 RECOMMENDED START:**
+1. Image optimization (biggest impact on performance)
+2. Create missing assets (favicon, OG image)
+3. Git authentication setup
+4. Deploy to Vercel
+5. Cross-browser/mobile testing
+
+---
+
+## 💡 SUGGESTED SESSION 2 FOCUS
+
+**Goal: Get site production-ready and deployed**
+
+**Phase 1: Optimize & Polish (45 min)**
+- Compress all images
+- Create thumbnails
+- Add favicon and OG image
+
+**Phase 2: Deploy (30 min)**
+- Set up Git authentication
+- Deploy to Vercel
+- Test deployed site
+
+**Phase 3: Test & Refine (45 min)**
+- Cross-browser testing
+- Mobile testing
+- Lighthouse audit
+- Fix any issues found
+
+**Phase 4: Domain & Analytics (30 min)**
+- Configure custom domain
+- Add analytics tracking
+- Final production checks
+- **Cancel Squarespace hosting** ⚠️ (after confirming new site is live)
+
+---
+
 ## Contact & Support
 
 **Artist**: Georgina Roy
