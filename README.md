@@ -1,6 +1,17 @@
 # Georgie Originals
 
-A modern, static website showcasing original paintings with an interactive gallery and lightbox feature.
+A minimalist, static website showcasing original paintings by Georgina Roy with an interactive gallery and lightbox feature.
+
+## Design Philosophy
+
+This site embodies a **minimalist aesthetic** that puts the artwork front and center:
+- **Monochromatic palette**: Black, white, and gray tones let paintings provide the color
+- **Generous white space**: Breathing room that creates a gallery-like atmosphere
+- **Clean typography**: Simple sans-serif fonts with subtle letter-spacing
+- **Minimal effects**: No shadows, gradients, or decorative elements
+- **Subtle interactions**: Opacity changes instead of aggressive animations
+
+The design draws inspiration from contemporary art galleries where the space serves the art, not the other way around.
 
 ## Features
 
@@ -167,15 +178,23 @@ Vercel will automatically redeploy your site with the changes.
 
 ### Change Color Scheme
 
-Edit CSS variables in `css/styles.css`:
+The current design uses a **minimalist monochromatic palette**. Edit CSS variables in `css/styles.css`:
 
 ```css
 :root {
-  --color-primary: #2c3e50;    /* Header/footer background */
-  --color-secondary: #e74c3c;  /* Buttons and accents */
-  --color-accent: #3498db;     /* Links and highlights */
+  /* Current minimalist palette */
+  --color-primary: #000;        /* Pure black for text and borders */
+  --color-secondary: #333;      /* Dark gray */
+  --color-accent: #666;         /* Medium gray for secondary text */
+  --color-text: #000;           /* Primary text color */
+  --color-text-light: #666;     /* Secondary text color */
+  --color-bg: #fff;             /* White background */
+  --color-bg-light: #fafafa;    /* Off-white for subtle sections */
+  --color-border: #e8e8e8;      /* Light gray borders */
 }
 ```
+
+**Note**: The minimalist design intentionally uses black/white/gray to let the artwork provide all the color. Consider this philosophy before adding colorful accents.
 
 ### Add Social Media Links
 
@@ -226,4 +245,8 @@ All rights reserved. The code structure may be used as a template, but the artwo
 
 ## Support
 
-For issues or questions, contact: hello@georgieoriginals.com
+For issues or questions, contact: aaron@aaronroy.com
+
+## Session Documentation
+
+For detailed development notes, technical decisions, and session history, see [claude.md](claude.md).
