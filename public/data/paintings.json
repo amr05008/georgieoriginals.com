@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "title": "Blue Thunder",
+    "year": "2024",
+    "medium": "Oil on Canvas",
+    "dimensions": "36 x 24 inches",
+    "image": "/public/images/paintings/1_bluethunder.jpeg",
+    "thumbnail": "/public/images/paintings/painting-1-thumb.jpg",
+    "description": "I created this piece on a moonlit night alongside a wood fire. Inspired by a tree.",
+    "available": true
+  },
+  {
+    "id": 2,
+    "title": "Painting Title 2",
+    "year": "2024",
+    "medium": "Oil on Canvas",
+    "dimensions": "24 x 30 inches",
+    "image": "/public/images/paintings/painting-2.jpg",
+    "thumbnail": "/public/images/paintings/painting-2-thumb.jpg",
+    "description": "Brief description of the painting (optional)",
+    "available": true
+  },
+  
