@@ -17,58 +17,90 @@ The design draws inspiration from contemporary art galleries where the space ser
 
 - **JSON-Driven Gallery**: All paintings are managed through a simple JSON file
 - **Responsive Lightbox**: Full-screen viewing with keyboard and touch navigation
+- **Optimized Performance**: Automated image optimization with 88.9% reduction in initial load
+- **Lazy Loading**: Gallery loads thumbnails first, full images on-demand
 - **Modular JavaScript**: Clean, organized code with separate modules for gallery and lightbox
 - **Mobile-Friendly**: Fully responsive design that works on all devices
 - **Accessible**: Built with ARIA attributes and keyboard navigation support
-- **Fast Loading**: Optimized images with lazy loading
-- **SEO Ready**: Semantic HTML with proper meta tags
+- **SEO & Social**: Complete meta tags, favicons, and Open Graph images
+- **PWA Ready**: Web app manifest for home screen installation
 
 ## Project Structure
 
 ```
 georgieoriginals.com/
 ├── css/
-│   └── styles.css          # All styles organized by section
+│   └── styles.css                 # All styles organized by section
 ├── js/
-│   ├── utils.js            # Helper functions
-│   ├── gallery.js          # Gallery rendering and management
-│   └── lightbox.js         # Lightbox functionality
+│   ├── utils.js                   # Helper functions
+│   ├── gallery.js                 # Gallery rendering and management
+│   └── lightbox.js                # Lightbox functionality
 ├── public/
 │   ├── data/
-│   │   └── paintings.json  # Gallery data
+│   │   └── paintings.json         # Gallery data
 │   └── images/
-│       └── paintings/      # Painting images
-├── index.html              # Main HTML file
-├── vercel.json            # Vercel configuration
-├── .gitignore             # Git ignore rules
-└── README.md              # This file
+│       ├── paintings/
+│       │   ├── originals/         # Original high-res backups
+│       │   ├── thumbs/            # 600px thumbnails for gallery
+│       │   └── optimized/         # 1200px images for lightbox
+│       ├── favicon*               # Favicon files (7 sizes)
+│       ├── og-image.jpg           # Social media share image
+│       └── site.webmanifest       # PWA manifest
+├── index.html                     # Main HTML file
+├── optimize-images.js             # Image optimization script
+├── generate-favicon.js            # Favicon generation script
+├── generate-og-image.js           # OG image generation script
+├── package.json                   # NPM scripts and dependencies
+├── vercel.json                    # Vercel deployment config
+├── .gitignore                     # Git ignore rules
+├── README.md                      # This file
+└── claude.md                      # Development session notes
 ```
 
 ## Getting Started
 
-### 1. Add Your Paintings
+### Prerequisites
 
-Edit `public/data/paintings.json` to add your painting details:
+- Node.js 18+ (for image optimization scripts)
+- npm (comes with Node.js)
 
-```json
-{
-  "id": 1,
-  "title": "Painting Title",
-  "year": "2024",
-  "medium": "Oil on Canvas",
-  "dimensions": "24 x 30 inches",
-  "image": "/public/images/paintings/painting-1.jpg",
-  "thumbnail": "/public/images/paintings/painting-1-thumb.jpg",
-  "description": "Optional description",
-  "available": true
-}
+### 1. Install Dependencies
+
+```bash
+npm install
 ```
 
-### 2. Add Your Images
+This installs Sharp for image processing.
 
-1. Place your painting images in `public/images/paintings/`
-2. Recommended: Create thumbnails (smaller versions) for faster gallery loading
-3. Update the paths in `paintings.json` to match your image filenames
+### 2. Add Your Paintings
+
+1. **Add original images** to `public/images/paintings/` (any size, will be optimized)
+
+2. **Run the optimization script:**
+   ```bash
+   npm run optimize
+   ```
+   This automatically creates:
+   - `thumbs/` - 600px thumbnails for gallery (fast loading)
+   - `optimized/` - 1200px images for lightbox (detail preserved)
+   - `originals/` - Backs up your original files
+
+3. **Edit `public/data/paintings.json`** with your painting details:
+   ```json
+   {
+     "id": 1,
+     "title": "Painting Title",
+     "year": "2024",
+     "medium": "Oil on Canvas",
+     "dimensions": "24 x 30 inches",
+     "thumbnail": "/public/images/paintings/thumbs/painting-1.jpg",
+     "image": "/public/images/paintings/optimized/painting-1.jpg",
+     "description": "Optional description",
+     "available": true
+   }
+   ```
+
+The optimization script updates `paintings.json` automatically with the correct paths.
 
 ### 3. Customize Content
 
@@ -141,9 +173,34 @@ git push
 
 Vercel will automatically redeploy your site with the changes.
 
-## Image Optimization Tips
+## NPM Scripts
 
-1. **Format**: Use JPEG for photographs/paintings, PNG for graphics
+This project includes several helpful scripts:
+
+```bash
+npm run optimize      # Optimize all images (creates thumbs + optimized versions)
+npm run favicon       # Generate favicon from selected painting
+npm run og-image      # Generate Open Graph social sharing image
+```
+
+## Image Optimization
+
+### Automated Optimization
+
+The `npm run optimize` script uses Sharp to:
+- Create 600px thumbnails (85% quality JPEG)
+- Create 1200px optimized full-size (90% quality JPEG)
+- Back up originals to `originals/` folder
+- Update `paintings.json` with new paths
+
+**Results:**
+- 88.9% reduction in initial gallery load
+- Gallery loads thumbnails first (~1.88 MB total)
+- Lightbox loads full images on-demand (~6.54 MB total)
+
+### Manual Optimization Tips
+
+1. **Format**: Use JPEG for photographs/paintings, PNG for graphics with transparency
 2. **Size**:
    - Full images: Max 2000px on longest side
    - Thumbnails: 400-600px on longest side
