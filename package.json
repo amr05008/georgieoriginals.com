@@ -1,0 +1,27 @@
+{
+  "name": "georgieoriginals.com",
+  "version": "1.0.0",
+  "description": "A minimalist, static website showcasing original paintings by Georgina Roy with an interactive gallery and lightbox feature.",
+  "main": "index.js",
+  "scripts": {
+    "optimize": "node optimize-images.js",
+    "favicon": "node generate-favicon.js",
+    "og-image": "node generate-og-image.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amr05008/georgieoriginals.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/amr05008/georgieoriginals.com/issues"
+  },
+  "homepage": "https://github.com/amr05008/georgieoriginals.com#readme",
+  "devDependencies": {
+    "sharp": "^0.34.4"
+  }
+}
