@@ -311,12 +311,6 @@ imageContainer.addEventListener('touchend', (e) => {
 1. **Analytics**:
    - Add Vercel Analytics 
 
-2. **DNS Config**:
-   - Confirm page DNS is properly configured
-
-3. **cancel squarespace**
-   - cancel squarespace site before 11/1/25
-
 ### Git Repository Setup:
 ```bash
 git init
