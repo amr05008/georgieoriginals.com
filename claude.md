@@ -308,30 +308,14 @@ imageContainer.addEventListener('touchend', (e) => {
 
 ## Next Steps / Recommendations
 
-### Before Production Deployment:
-1. **Image Optimization**:
-   - Compress JPEGs (recommend TinyPNG or ImageOptim)
-   - Create proper thumbnails (400-600px wide)
-   - Convert to WebP format with JPEG fallback for better performance
+1. **Analytics**:
+   - Add Vercel Analytics 
 
-2. **SEO Enhancements**:
-   - Add Open Graph image (create og-image.jpg)
-   - Update meta description with artist-specific keywords
-   - Add structured data (Schema.org markup for ArtGallery)
+2. **DNS Config**:
+   - Confirm page DNS is properly configured
 
-3. **Analytics**:
-   - Add Google Analytics or Plausible tracking
-   - Set up conversion tracking for email clicks
-
-4. **Testing**:
-   - Cross-browser testing (Chrome, Firefox, Safari, Edge)
-   - Mobile device testing (iOS Safari, Android Chrome)
-   - Accessibility audit (Lighthouse, axe DevTools)
-
-5. **Content**:
-   - Add favicon.png to public/images/
-   - Consider adding more artist photos
-   - Add testimonials section if available
+3. **cancel squarespace**
+   - cancel squarespace site before 11/1/25
 
 ### Git Repository Setup:
 ```bash
