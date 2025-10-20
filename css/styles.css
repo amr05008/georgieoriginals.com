@@ -136,7 +136,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--color-bg);
   color: var(--color-text);
   text-align: center;
-  padding: var(--spacing-xl) var(--spacing-md);
+  padding: 3.6rem var(--spacing-md);
   margin-bottom: var(--spacing-lg);
 }
 
